@@ -1,0 +1,971 @@
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#087f5b" />
+  <title>বিজয়ী — প্রস্তুতি হোক জয়ের</title>
+  <meta name="description" content="বিসিএস, ব্যাংক, শিক্ষক নিবন্ধনসহ সকল প্রতিযোগিতামূলক পরীক্ষার প্রস্তুতি নিন বিজয়ীর সাথে। পরীক্ষা দিন, পড়ুন, শিখুন এবং নিজেকে এগিয়ে রাখুন।" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #087f5b;
+      --primary-dark: #066447;
+      --primary-light: #e8f6ef;
+      --dark: #14251e;
+      --text: #52645b;
+      --muted: #829188;
+      --bg: #f8fbf9;
+      --white: #ffffff;
+      --border: #e8efeb;
+      --radius: 18px;
+      --shadow: 0 15px 45px rgba(21, 66, 47, .08);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', 'Hind Siliguri', sans-serif;
+      color: var(--dark);
+      background: var(--white);
+      line-height: 1.65;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    button { font: inherit; cursor: pointer; }
+    .container { width: min(1160px, 90%); margin: auto; }
+
+    /* Navigation */
+    header {
+      height: 78px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      background: rgba(255,255,255,.95);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(14px);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .logo {
+      font-family: 'Hind Siliguri', sans-serif;
+      font-size: 30px;
+      font-weight: 700;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .logo-icon {
+      background: var(--primary);
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .nav-links a:hover { color: var(--primary); }
+
+    .nav-actions { display: flex; align-items: center; gap: 12px; }
+
+    .btn {
+      padding: 11px 21px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: .2s;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      color: white;
+      background: var(--primary);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border-color: var(--border);
+      background: white;
+    }
+
+    .btn-outline:hover { border-color: var(--primary); color: var(--primary); }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 25px;
+    }
+
+    /* Hero */
+    .hero {
+      background:
+        radial-gradient(circle at 85% 20%, #dff5e9 0, transparent 30%),
+        linear-gradient(135deg, #f6fbf7, #fff 70%);
+      padding: 95px 0 90px;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--primary-light);
+      color: var(--primary);
+      padding: 7px 14px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-family: 'Hind Siliguri', sans-serif;
+      font-size: clamp(42px, 5vw, 62px);
+      line-height: 1.28;
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
+
+    .hero h1 span { color: var(--primary); }
+
+    .hero-description {
+      font-family: 'Hind Siliguri', sans-serif;
+      font-size: 18px;
+      color: var(--text);
+      max-width: 510px;
+      margin: 20px 0 30px;
+      line-height: 1.9;
+    }
+
+    .hero-buttons { display: flex; gap: 13px; flex-wrap: wrap; }
+
+    .hero-trust {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 35px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .avatar-stack { display: flex; }
+    .avatar-stack span {
+      width: 31px;
+      height: 31px;
+      border: 2px solid white;
+      background: #d8eee2;
+      border-radius: 50%;
+      margin-right: -9px;
+      display: grid;
+      place-items: center;
+      font-size: 13px;
+    }
+
+    /* Dashboard preview */
+    .dashboard-wrap { position: relative; }
+
+    .dashboard {
+      background: white;
+      padding: 25px;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      position: relative;
+      z-index: 2;
+    }
+
+    .dashboard-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 22px;
+    }
+
+    .dashboard-header h3 { font-size: 17px; }
+    .dashboard-header p { font-size: 12px; color: var(--muted); }
+    .status {
+      color: var(--primary);
+      background: var(--primary-light);
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .progress-card {
+      padding: 20px;
+      background: #f6faf7;
+      border-radius: 15px;
+      margin-bottom: 15px;
+    }
+
+    .progress-top {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    .progress-top strong { color: var(--primary); }
+
+    .progress-bar {
+      height: 8px;
+      background: #e2ece5;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 76%;
+      background: var(--primary);
+      border-radius: 20px;
+    }
+
+    .dashboard-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .stat {
+      background: white;
+      border: 1px solid var(--border);
+      padding: 15px 10px;
+      border-radius: 13px;
+      text-align: center;
+    }
+
+    .stat .icon { font-size: 22px; }
+    .stat strong { display: block; font-size: 20px; margin-top: 5px; }
+    .stat small { color: var(--muted); font-size: 11px; }
+
+    .exam-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 13px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .exam-icon {
+      width: 43px;
+      height: 43px;
+      background: var(--primary-light);
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      font-size: 21px;
+    }
+
+    .exam-info { flex: 1; }
+    .exam-info strong { display: block; font-size: 13px; }
+    .exam-info small { color: var(--muted); font-size: 11px; }
+    .exam-score { color: var(--primary); font-weight: 700; font-size: 14px; }
+
+    .floating-card {
+      position: absolute;
+      background: white;
+      padding: 13px 17px;
+      border-radius: 13px;
+      box-shadow: var(--shadow);
+      z-index: 3;
+      font-size: 12px;
+    }
+
+    .floating-one { top: -20px; right: -22px; }
+    .floating-two { bottom: -22px; left: -28px; }
+    .floating-card strong { color: var(--primary); display: block; font-size: 19px; }
+
+    /* General sections */
+    section { padding: 85px 0; }
+
+    .section-heading {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 45px;
+    }
+
+    .section-heading span {
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .section-heading h2 {
+      font-family: 'Hind Siliguri', sans-serif;
+      font-size: 37px;
+      line-height: 1.4;
+      margin: 10px 0;
+    }
+
+    .section-heading p { color: var(--text); font-size: 15px; }
+
+    /* Categories */
+    .categories { background: var(--bg); }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .category-card {
+      background: white;
+      padding: 24px 20px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      transition: .25s;
+    }
+
+    .category-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+
+    .category-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: var(--primary-light);
+      display: grid;
+      place-items: center;
+      font-size: 25px;
+      margin-bottom: 18px;
+    }
+
+    .category-card h3 {
+      font-family: 'Hind Siliguri', sans-serif;
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    .category-card p { color: var(--muted); font-size: 12px; }
+
+    /* Features */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .feature-card {
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      transition: .25s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+
+    .feature-card .feature-icon {
+      font-size: 29px;
+      margin-bottom: 18px;
+      display: block;
+    }
+
+    .feature-card h3 {
+      font-family: 'Hind Siliguri', sans-serif;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .feature-card p {
+      font-family: 'Hind Siliguri', sans-serif;
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    /* How it works */
+    .how { background: var(--bg); }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      text-align: center;
+    }
+
+    .step-number {
+      width: 55px;
+      height: 55px;
+      margin: 0 auto 18px;
+      display: grid;
+      place-items: center;
+      background: var(--primary);
+      color: white;
+      font-weight: 700;
+      font-size: 20px;
+      border-radius: 16px;
+    }
+
+    .steps h3 {
+      font-family: 'Hind Siliguri', sans-serif;
+      font-size: 21px;
+      margin-bottom: 8px;
+    }
+
+    .steps p {
+      font-family: 'Hind Siliguri', sans-serif;
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    /* CTA */
+    .cta-section { padding: 75px 0; }
+
+    .cta {
+      padding: 65px 35px;
+      text-align: center;
+      border-radius: 25px;
+      background: linear-gradient(120deg, #066447, #0c9c6e);
+      color: white;
+    }
+
+    .cta h2 {
+      font-family: 'Hind Siliguri', sans-serif;
+      font-size: 38px;
+      margin-bottom: 12px;
+    }
+
+    .cta p {
+      font-family: 'Hind Siliguri', sans-serif;
+      opacity: .85;
+      margin-bottom: 25px;
+      font-size: 17px;
+    }
+
+    .cta .btn { background: white; color: var(--primary-dark); }
+    .cta .btn:hover { transform: translateY(-3px); }
+
+    /* Footer */
+    footer {
+      background: #10251c;
+      color: white;
+      padding: 55px 0 22px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 50px;
+      padding-bottom: 40px;
+    }
+
+    .footer-brand p {
+      color: #a7b8ae;
+      font-family: 'Hind Siliguri', sans-serif;
+      font-size: 14px;
+      max-width: 350px;
+      margin-top: 15px;
+    }
+
+    .footer-title { font-weight: 600; margin-bottom: 15px; }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      color: #a7b8ae;
+      font-size: 13px;
+    }
+
+    .footer-links a:hover { color: white; }
+
+    .copyright {
+      border-top: 1px solid #294137;
+      padding-top: 20px;
+      text-align: center;
+      color: #82978b;
+      font-size: 12px;
+    }
+
+    /* Responsive */
+    @media(max-width: 900px) {
+      .hero-grid { gap: 35px; }
+      .category-grid { grid-template-columns: repeat(2, 1fr); }
+      .feature-grid { grid-template-columns: repeat(2, 1fr); }
+      .floating-one { right: -5px; }
+    }
+
+    @media(max-width: 700px) {
+      header { height: 68px; }
+      .menu-toggle { display: block; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 20px 5%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+        border-bottom: 1px solid var(--border);
+      }
+      .nav-links.active { display: flex; }
+      .nav-actions .btn-outline { display: none; }
+      .hero { padding: 65px 0 75px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 55px; }
+      .hero h1 { font-size: 43px; }
+      .dashboard-wrap { margin: 0 8px; }
+      section { padding: 65px 0; }
+      .section-heading h2 { font-size: 30px; }
+      .feature-grid, .steps { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
+      .footer-brand { grid-column: 1 / -1; }
+      .cta { padding: 45px 20px; }
+      .cta h2 { font-size: 29px; }
+    }
+
+    @media(max-width: 420px) {
+      .category-grid { gap: 10px; }
+      .category-card { padding: 17px 13px; }
+      .dashboard { padding: 17px; }
+      .floating-two { left: -8px; }
+      .hero h1 { font-size: 37px; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-brand { grid-column: auto; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <a href="#" class="logo">
+        <span class="logo-icon">ব</span>
+        বিজয়ী
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#home">হোম</a>
+        <a href="#exams">পরীক্ষাসমূহ</a>
+        <a href="#features">সুবিধাসমূহ</a>
+        <a href="#how-it-works">যেভাবে কাজ করে</a>
+      </div>
+
+      <div class="nav-actions">
+        <a href="/login" class="btn btn-outline">লগইন</a>
+        <a href="/register" class="btn btn-primary">শুরু করুন →</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">☰</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+
+      <div>
+        <div class="eyebrow">✦ আপনার প্রস্তুতির বিশ্বস্ত সঙ্গী</div>
+
+        <h1>
+          স্বপ্ন শুধু দেখবেন না,<br>
+          <span>জয়ী হয়ে দেখান!</span>
+        </h1>
+
+        <p class="hero-description">
+          বিসিএস, ব্যাংক, শিক্ষক নিবন্ধনসহ সকল প্রতিযোগিতামূলক
+          পরীক্ষার প্রস্তুতি নিন এক প্ল্যাটফর্মে।
+          পড়ুন, পরীক্ষা দিন এবং নিজেকে প্রস্তুত করুন সাফল্যের জন্য।
+        </p>
+
+        <div class="hero-buttons">
+          <a href="/register" class="btn btn-primary">
+            প্রস্তুতি শুরু করুন →
+          </a>
+          <a href="#features" class="btn btn-outline">
+            আরও জানুন
+          </a>
+        </div>
+
+        <div class="hero-trust">
+          <div class="avatar-stack">
+            <span>👨‍🎓</span>
+            <span>👩‍🎓</span>
+            <span>👨‍💻</span>
+            <span>🎓</span>
+          </div>
+          <span>আপনার লক্ষ্য অর্জনের যাত্রা শুরু হোক আজই</span>
+        </div>
+      </div>
+
+      <!-- Dashboard illustration -->
+      <div class="dashboard-wrap">
+
+        <div class="floating-card floating-one">
+          🏆 আপনার লক্ষ্য
+          <strong>বিজয়ী হওয়া!</strong>
+        </div>
+
+        <div class="dashboard">
+          <div class="dashboard-header">
+            <div>
+              <h3>শিক্ষার্থীর ড্যাশবোর্ড</h3>
+              <p>আপনার প্রস্তুতির এক নজরে</p>
+            </div>
+            <span class="status">● Active</span>
+          </div>
+
+          <div class="progress-card">
+            <div class="progress-top">
+              <span>সাপ্তাহিক প্রস্তুতি</span>
+              <strong>৭৬%</strong>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill"></div>
+            </div>
+          </div>
+
+          <div class="dashboard-stats">
+            <div class="stat">
+              <span class="icon">📝</span>
+              <strong>২৪</strong>
+              <small>পরীক্ষা</small>
+            </div>
+            <div class="stat">
+              <span class="icon">📚</span>
+              <strong>১৮</strong>
+              <small>পাঠ সম্পন্ন</small>
+            </div>
+            <div class="stat">
+              <span class="icon">🏆</span>
+              <strong>৮৫%</strong>
+              <small>গড় স্কোর</small>
+            </div>
+          </div>
+
+          <h4 style="font-size:14px;margin-bottom:8px;">
+            সাম্প্রতিক কার্যক্রম
+          </h4>
+
+          <div class="exam-item">
+            <div class="exam-icon">📖</div>
+            <div class="exam-info">
+              <strong>বাংলা সাহিত্য</strong>
+              <small>মডেল টেস্ট · সম্পন্ন</small>
+            </div>
+            <span class="exam-score">৮৮%</span>
+          </div>
+
+          <div class="exam-item">
+            <div class="exam-icon">🌍</div>
+            <div class="exam-info">
+              <strong>সাধারণ জ্ঞান</strong>
+              <small>অনুশীলন · সম্পন্ন</small>
+            </div>
+            <span class="exam-score">৯২%</span>
+          </div>
+
+          <div class="exam-item">
+            <div class="exam-icon">🔢</div>
+            <div class="exam-info">
+              <strong>গাণিতিক যুক্তি</strong>
+              <small>অনুশীলন · চলমান</small>
+            </div>
+            <span class="exam-score">৭৫%</span>
+          </div>
+        </div>
+
+        <div class="floating-card floating-two">
+          ⭐ ধারাবাহিকতা বজায় রাখুন!
+          <strong>Keep Learning</strong>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Exam categories -->
+  <section class="categories" id="exams">
+    <div class="container">
+      <div class="section-heading">
+        <span>Exam Categories</span>
+        <h2>আপনার লক্ষ্যের জন্য সঠিক প্রস্তুতি</h2>
+        <p>
+          যে পরীক্ষার জন্যই প্রস্তুতি নিন, প্রয়োজনীয় অনুশীলন ও
+          শেখার উপকরণ খুঁজে নিন বিজয়ীতে।
+        </p>
+      </div>
+
+      <div class="category-grid">
+
+        <a href="/exams/bcs" class="category-card">
+          <div class="category-icon">🏛️</div>
+          <h3>বিসিএস প্রস্তুতি</h3>
+          <p>প্রিলিমিনারি ও বিষয়ভিত্তিক অনুশীলন</p>
+        </a>
+
+        <a href="/exams/bank" class="category-card">
+          <div class="category-icon">🏦</div>
+          <h3>ব্যাংক জব</h3>
+          <p>ব্যাংক নিয়োগ পরীক্ষার প্রস্তুতি</p>
+        </a>
+
+        <a href="/exams/ntrca" class="category-card">
+          <div class="category-icon">👨‍🏫</div>
+          <h3>শিক্ষক নিবন্ধন</h3>
+          <p>NTRCA পরীক্ষার প্রস্তুতি ও মডেল টেস্ট</p>
+        </a>
+
+        <a href="/exams/other-jobs" class="category-card">
+          <div class="category-icon">💼</div>
+          <h3>অন্যান্য চাকরি</h3>
+          <p>সরকারি ও বেসরকারি নিয়োগ পরীক্ষা</p>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features">
+    <div class="container">
+
+      <div class="section-heading">
+        <span>Everything You Need</span>
+        <h2>প্রস্তুতির সবকিছু, এক জায়গায়</h2>
+        <p>
+          শুধু পরীক্ষা নয়, সম্পূর্ণ শেখার অভিজ্ঞতা পাবেন
+          বিজয়ীর প্রতিটি ফিচারে।
+        </p>
+      </div>
+
+      <div class="feature-grid">
+
+        <div class="feature-card">
+          <span class="feature-icon">📝</span>
+          <h3>অনলাইন পরীক্ষা</h3>
+          <p>
+            বিষয়ভিত্তিক পরীক্ষা, মডেল টেস্ট ও MCQ অনুশীলনের
+            মাধ্যমে নিজের প্রস্তুতি যাচাই করুন।
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <span class="feature-icon">📚</span>
+          <h3>সমৃদ্ধ স্টাডি ম্যাটেরিয়াল</h3>
+          <p>
+            গুরুত্বপূর্ণ নোট, অধ্যায়ভিত্তিক কনটেন্ট ও
+            প্রয়োজনীয় পড়াশোনার উপকরণ পড়ুন সহজেই।
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <span class="feature-icon">🎥</span>
+          <h3>ভিডিও লেসন</h3>
+          <p>
+            অভিজ্ঞ শিক্ষকদের ভিডিও ক্লাসের মাধ্যমে
+            কঠিন বিষয়গুলো বুঝুন সহজভাবে।
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <span class="feature-icon">📊</span>
+          <h3>পারফরম্যান্স অ্যানালাইসিস</h3>
+          <p>
+            পরীক্ষার ফলাফল, নম্বর ও অগ্রগতি বিশ্লেষণ করে
+            নিজের দুর্বলতা চিহ্নিত করুন।
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <span class="feature-icon">⏱️</span>
+          <h3>সময়ভিত্তিক অনুশীলন</h3>
+          <p>
+            নির্দিষ্ট সময়ের মধ্যে প্রশ্নের উত্তর দিয়ে
+            বাস্তব পরীক্ষার জন্য নিজেকে প্রস্তুত করুন।
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <span class="feature-icon">🏆</span>
+          <h3>লিডারবোর্ড</h3>
+          <p>
+            অন্যান্য শিক্ষার্থীদের সঙ্গে নিজের অবস্থান
+            তুলনা করুন এবং আরও ভালো করার অনুপ্রেরণা পান।
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="how" id="how-it-works">
+    <div class="container">
+
+      <div class="section-heading">
+        <span>Simple Process</span>
+        <h2>আপনার বিজয়ের যাত্রা যেভাবে শুরু হবে</h2>
+        <p>মাত্র তিনটি ধাপে শুরু করুন আপনার প্রস্তুতি।</p>
+      </div>
+
+      <div class="steps">
+
+        <div>
+          <div class="step-number">১</div>
+          <h3>অ্যাকাউন্ট তৈরি করুন</h3>
+          <p>বিজয়ীতে যোগ দিন এবং আপনার পছন্দের পরীক্ষার লক্ষ্য নির্ধারণ করুন।</p>
+        </div>
+
+        <div>
+          <div class="step-number">২</div>
+          <h3>শিখুন ও অনুশীলন করুন</h3>
+          <p>স্টাডি ম্যাটেরিয়াল পড়ুন, ভিডিও দেখুন এবং নিয়মিত পরীক্ষা দিন।</p>
+        </div>
+
+        <div>
+          <div class="step-number">৩</div>
+          <h3>নিজেকে এগিয়ে নিন</h3>
+          <p>ফলাফল বিশ্লেষণ করুন, ভুল থেকে শিখুন এবং লক্ষ্যের দিকে এগিয়ে যান।</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to action -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta">
+        <h2>আপনার স্বপ্ন পূরণের প্রস্তুতি আজ থেকেই!</h2>
+        <p>
+          প্রতিটি অধ্যয়ন, প্রতিটি অনুশীলন আপনাকে নিয়ে যাবে
+          আপনার লক্ষ্যের আরও কাছে।
+        </p>
+        <a href="/register" class="btn">
+          বিজয়ীর সাথে শুরু করুন →
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <a href="#" class="logo" style="color:white;">
+          <span class="logo-icon">ব</span>
+          বিজয়ী
+        </a>
+        <p>
+          আপনার স্বপ্ন, আপনার লক্ষ্য, আপনার বিজয়।
+          প্রতিযোগিতামূলক পরীক্ষার প্রস্তুতিতে
+          আপনার নির্ভরযোগ্য শেখার প্ল্যাটফর্ম।
+        </p>
+      </div>
+
+      <div>
+        <div class="footer-title">এক্সপ্লোর</div>
+        <div class="footer-links">
+          <a href="#exams">পরীক্ষাসমূহ</a>
+          <a href="#features">সুবিধাসমূহ</a>
+          <a href="#how-it-works">কীভাবে কাজ করে</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-title">গুরুত্বপূর্ণ</div>
+        <div class="footer-links">
+          <a href="/about">আমাদের সম্পর্কে</a>
+          <a href="/contact">যোগাযোগ</a>
+          <a href="/privacy-policy">প্রাইভেসি পলিসি</a>
+          <a href="/terms">শর্তাবলি</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      © <span id="year"></span> বিজয়ী (Bijoyi). সর্বস্বত্ব সংরক্ষিত।
+    </div>
+
+  </div>
+</footer>
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    menuToggle.textContent =
+      navLinks.classList.contains('active') ? '✕' : '☰';
+  });
+
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+      menuToggle.textContent = '☰';
+    });
+  });
+
+  document.getElementById('year').textContent =
+    new Date().getFullYear();
+</script>
+
+</body>
+</html>
